@@ -71,7 +71,7 @@ func test_TCP_TLS13_UTLS_ChromeAuto_Default(ctx context.Context, l *slog.Logger,
 	tlsState := tlsConn.ConnectionState()
 	l.Info("handshake success", "handshake", tlsState.HandshakeComplete)
 
-	ttfb, err := measureTTFBOverConn(ctx, tlsConn, host)
+	ttfb, err := measureTTFB(ctx, tlsConn, host)
 	if err != nil {
 		res.err = err
 		l.Error(err.Error())
